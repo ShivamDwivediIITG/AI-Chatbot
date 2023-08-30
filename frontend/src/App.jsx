@@ -42,19 +42,19 @@ function App() {
 
   return (
     <main>
-      <h1>FullStack Chat AI Tutorial</h1>
+      <h1><b><i>Ask what you think</i></b></h1>
 
       <section>
         {chats && chats.length
           ? chats.map((chat, index) => (
-              <p key={index} className={chat.role === "user" ? "user_msg" : ""}>
-                <span>
-                  <b>{chat.role.toUpperCase()}</b>
-                </span>
-                <span>:</span>
-                <span>{chat.content}</span>
-              </p>
-            ))
+            <p key={index} className={chat.role === "user" ? "user_msg" : ""}>
+              <span>
+                <b>{chat.role.toUpperCase()}</b>
+              </span>
+              <span>:</span>
+              <span>{chat.content}</span>
+            </p>
+          ))
           : ""}
       </section>
 
@@ -69,7 +69,7 @@ function App() {
           type="text"
           name="message"
           value={message}
-          placeholder="Type a message here and hit Enter..."
+          placeholder="Write something..."
           onChange={(e) => setMessage(e.target.value)}
         />
       </form>
